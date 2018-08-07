@@ -1,14 +1,14 @@
 const { getRandomWordSync, getRandomWord } = require('word-maker');
 
-console.log('It works!');
+console.log('It works!')
 
 function numberOne() {
 	console.log( 'Number 1')
 
 	for (var i = 1; i < 101; i++) {
-		const word = getRandomWordSync({ withErrors: false });
+		const word = getRandomWordSync({ withErrors: false })
 
-		console.log(i +': ' + word);
+		console.log(i +': ' + word)
 	};
 
 }
@@ -30,21 +30,21 @@ function numberTwo() {
 	{
 	    if (i % 15 == 0)
 	    {
-	    	console.log(i +': ' + 'FizzBuzz');
+	    	console.log(i +': ' + 'FizzBuzz')
 	    }
 	    else if (i % 3 == 0)
 	    {
-			console.log(i +': ' + 'Fizz');
+			console.log(i +': ' + 'Fizz')
 	    }
 	    else if (i % 5 == 0)
 	    {
-			console.log(i +': ' + 'Buzz');
+			console.log(i +': ' + 'Buzz')
 	    }
 	    else
 	    {
-	    	const word = getRandomWordSync({ withErrors: false });
+	    	const word = getRandomWordSync({ withErrors: false })
 
-			console.log(i +': ' + word);
+			console.log(i +': ' + word)
 	    }
 	}
 
@@ -82,24 +82,24 @@ function numberThreeA() {
 	{
 	    if (i % 15 == 0)
 	    {
-	    	console.log(i +': ' + 'FizzBuzz');
+	    	console.log(i +': ' + 'FizzBuzz')
 	    }
 	    else if (i % 3 == 0)
 	    {
-			console.log(i +': ' + 'Fizz');
+			console.log(i +': ' + 'Fizz')
 	    }
 	    else if (i % 5 == 0)
 	    {
-			console.log(i +': ' + 'Buzz');
+			console.log(i +': ' + 'Buzz')
 	    }
 	    else
 	    {
-	    	const word = getRandomWord({ withErrors: false });
+	    	const word = getRandomWord({ withErrors: false })
 
 			word.then(function(argument) {
-					console.log(i +': ' + argument);
+					console.log(i +': ' + argument)
 				}, function(err){
-					console.log(err);
+					console.log(err)
 				})
 	    }
 	}
@@ -153,7 +153,7 @@ function numberThreeB() {
 	// async without fizz buzz
 
 	for (var i = 1; i < 101; i++) {
-		const word = getRandomWord({ withErrors: false });
+		const word = getRandomWord({ withErrors: false })
 
 		word.then(function(argument) {
 
@@ -199,7 +199,7 @@ function numberFourA() {
 
 		try {
 		   	
-		   	const word = getRandomWordSync({ withErrors: true });
+		   	const word = getRandomWordSync({ withErrors: true })
 
 			console.log(i +': ' + word)
 
@@ -251,15 +251,15 @@ function numberFourB() {
 	
 	for (var i = 1; i < 101; i++) {
 
-		const word = getRandomWord({ withErrors: true });
+		const word = getRandomWord({ withErrors: true })
 
 		word.then(function(argument) {
 
-			console.log(i +': ' + argument);
+			console.log(i +': ' + argument)
 
 		}, function(err){
 
-			console.log('Doh!');
+			console.log('Doh!')
 
 		})
 

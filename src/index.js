@@ -2,6 +2,8 @@ const { getRandomWordSync, getRandomWord } = require('word-maker');
 
 console.log('It works!')
 
+// 1) Print numbers from 1 to 100 to the console, but for each number also print a random word using the function getRandomWordSync.
+
 function numberOne() {
 	console.log( 'Number 1')
 
@@ -22,6 +24,8 @@ function numberOne() {
 // ...
 // 99: coffee
 // 100: score
+
+// 2) Modify your code to be a "Fizz Buzz" program. That is, print the numbers as in the previous step, but for multiples of three, print "Fizz" (instead of the random word), for multiples of five, print "Buzz" and for numbers which are both multiples of three and five, print "FizzBuzz".
 
 function numberTwo() {
 	console.log( 'Number 2')
@@ -72,9 +76,57 @@ function numberTwo() {
 // 99: Fizz
 // 100: Buzz
 
+// 3) Create a version of steps 1 and 2 using the asynchronous function, getRandomWord. This function returns a Promise, which resolves to a random word string. The numbers may or may not be in numerical order.
+
+// 3A. asynchronous step 1
+
 function numberThreeA() {
 
 	console.log( 'Number 3A')
+
+	// async without fizz buzz
+
+	for (var i = 1; i < 101; i++) {
+		const word = getRandomWord({ withErrors: false })
+
+		word.then(function(argument) {
+
+				console.log(i +': ' + argument)
+
+			})
+	}
+
+}
+// numberThreeA()
+
+// Number 3A
+// 101: hold
+// 101: care
+// 101: sale
+// 101: cool
+// 101: eat
+// 101: copy
+// 101: friend
+// 101: bell
+// 101: seen
+// ...
+// 101: company
+// 101: late
+// 101: fresh
+// 101: everyone
+// 101: organized
+// 101: exercise
+// 101: fifteen
+// 101: arrow
+// 101: imagine
+// 101: hello
+// 101: forest
+
+// 3B. asynchronous step 2
+
+function numberThreeB() {
+
+	console.log( 'Number 3B')
 
 	// async with fizz buzz
 
@@ -105,9 +157,9 @@ function numberThreeA() {
 	}
 
 }
-// numberThreeA()
+// numberThreeB()
 
-// Number 3A
+// Number 3B
 // 3: Fizz
 // 5: Buzz
 // 6: Fizz
@@ -146,48 +198,9 @@ function numberThreeA() {
 // 101: women
 // 101: consider
 
-function numberThreeB() {
+// 4) Add error handling to both the synchronous and asynchronous solutions (calling getRandomWord({ withErrors: true }) will intermitently throw an error instead of return a random word). When an error is caught, the programm should print "Doh!" instead of the random word, "Fizz", "Buzz" or "FizzBuzz"
 
-	console.log( 'Number 3B')
-
-	// async without fizz buzz
-
-	for (var i = 1; i < 101; i++) {
-		const word = getRandomWord({ withErrors: false })
-
-		word.then(function(argument) {
-
-				console.log(i +': ' + argument)
-
-			})
-	}
-
-}
-// numberThreeB()
-
-// Number 3B
-// 101: hold
-// 101: care
-// 101: sale
-// 101: cool
-// 101: eat
-// 101: copy
-// 101: friend
-// 101: bell
-// 101: seen
-// ...
-// 101: company
-// 101: late
-// 101: fresh
-// 101: everyone
-// 101: organized
-// 101: exercise
-// 101: fifteen
-// 101: arrow
-// 101: imagine
-// 101: hello
-// 101: forest
-
+// 4A. synchronous
 
 function numberFourA() {
 
@@ -243,6 +256,8 @@ function numberFourA() {
 // 99: look
 // 100: why
 
+// 4B. asynchronous
+
 function numberFourB() {
 
 	console.log( 'Number 4B')
@@ -291,6 +306,8 @@ function numberFourB() {
 // Doh!
 // 101: gentle
 // 101: glad
+
+// Further program to simplify and identify the task by number.
 
 function runProgram (argument) 
 {

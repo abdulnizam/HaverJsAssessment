@@ -25,6 +25,7 @@ is already *required* for you in `src/index.js`
 
 # console result
 
+```
 Number 1
 1: dried
 2: pack
@@ -34,10 +35,13 @@ Number 1
 99: coffee
 100: score
 
+```
+
 2) Modify your code to be a "Fizz Buzz" program. That is, print the numbers as in the previous step, but for multiples of three, print "Fizz" (instead of the random word), for multiples of five, print "Buzz" and for numbers which are both multiples of three and five, print "FizzBuzz".
 
 # console result
 
+```
 Number 2
 1: ruler
 2: save
@@ -58,6 +62,7 @@ Number 2
 98: daughter
 99: Fizz
 100: Buzz
+```
 
 3) Create a version of steps 1 and 2 using the asynchronous function, getRandomWord. This function returns a Promise, which resolves to a random word string. The numbers may or may not be in numerical order.
 
@@ -65,6 +70,7 @@ Number 2
 
 # console result
 
+```
 Number 3A
 101: hold
 101: care
@@ -87,11 +93,13 @@ Number 3A
 101: imagine
 101: hello
 101: forest
+```
 
 3B. asynchronous step 2
 
 # console result
 
+```
 Number 3B
 3: Fizz
 5: Buzz
@@ -130,6 +138,7 @@ Number 3B
 101: without
 101: women
 101: consider
+```
 
 4) Add error handling to both the synchronous and asynchronous solutions (calling getRandomWord({ withErrors: true }) will intermitently throw an error instead of return a random word). When an error is caught, the programm should print "Doh!" instead of the random word, "Fizz", "Buzz" or "FizzBuzz"
 
@@ -137,6 +146,7 @@ Number 3B
 
 # console result
 
+```
 Number 4A
 1: diagram
 2: breeze
@@ -164,11 +174,13 @@ Doh!
 98: western
 99: look
 100: why
+```
 
 4B. asynchronous
 
 # console result
 
+```
 Number 4B
 101: all
 101: stock
@@ -192,3 +204,5 @@ Doh!
 Doh!
 101: gentle
 101: glad
+```
+

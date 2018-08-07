@@ -10,7 +10,7 @@ This is the assesment work has been given by Haver.com. Here the full document a
 Set this repository up by running:
 
 ```
-cd /path/to/harver-js-test
+cd /path/to/HarverJsAssessment
 npm install
 ```
 

@@ -11,7 +11,6 @@ function numberOne() {
 		console.log(i +': ' + word);
 	};
 
-	console.log( '----------------')
 }
 // numberOne()
 
@@ -49,7 +48,6 @@ function numberTwo() {
 	    }
 	}
 
-	console.log( '----------------')
 }
 // numberTwo()
 
@@ -106,8 +104,6 @@ function numberThreeA() {
 	    }
 	}
 
-	console.log( '----------------')
-	
 }
 // numberThreeA()
 
@@ -166,8 +162,6 @@ function numberThreeB() {
 			})
 	}
 
-	console.log( '----------------')
-
 }
 // numberThreeB()
 
@@ -217,8 +211,6 @@ function numberFourA() {
 		}
 
 	}
-
-	console.log( '----------------')
 
 }
 // numberFourA()
@@ -272,8 +264,6 @@ function numberFourB() {
 		})
 
 	}
-
-	console.log( '----------------')
 
 }
 // numberFourB()

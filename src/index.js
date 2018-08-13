@@ -7,11 +7,18 @@ console.log('It works!')
 function numberOne() {
 	console.log( 'Number 1')
 
+	let results = [ ]
+
 	for (var i = 1; i < 101; i++) {
 		const word = getRandomWordSync({ withErrors: false })
 
-		console.log(i +': ' + word)
+		// console.log(i +': ' + word)
+
+		results.push( i +': ' + word );
+
 	};
+
+	return results;
 
 }
 // numberOne()
@@ -124,7 +131,7 @@ function numberThreeA() {
 
 // 3B. asynchronous step 2
 
-function numberThreeB() {
+async function numberThreeB() {
 
 	console.log( 'Number 3B')
 
@@ -148,7 +155,7 @@ function numberThreeB() {
 	    {
 	    	const word = getRandomWord({ withErrors: false })
 
-			word.then(function(argument) {
+			await word.then(function(argument) {
 					console.log(i +': ' + argument)
 				}, function(err){
 					console.log(err)
@@ -219,7 +226,7 @@ function numberFourA() {
 		}
 		catch(err) {
 
-			console.log('Doh!')
+			console.log(i +': ' +'Doh!')
 
 		}
 
@@ -258,27 +265,37 @@ function numberFourA() {
 
 // 4B. asynchronous
 
-function numberFourB() {
+async function numberFourB() {
 
 	console.log( 'Number 4B')
 
 	// asynchronous & witherrors true
+
+	let results = [ ];
 	
 	for (var i = 1; i < 101; i++) {
 
 		const word = getRandomWord({ withErrors: true })
 
-		word.then(function(argument) {
+		await word.then(function(argument) {
 
-			console.log(i +': ' + argument)
+			// console.log(i +': ' + argument)
+
+			results.push( i +': ' + argument );
 
 		}, function(err){
 
-			console.log('Doh!')
+			// console.log(i +': ' + 'Doh!')
+
+			results.push( i +': ' + 'Doh!' );
+
 
 		})
 
+
 	}
+
+	return results;
 
 }
 // numberFourB()
@@ -307,28 +324,31 @@ function numberFourB() {
 // 101: gentle
 // 101: glad
 
+
 // Further program to simplify and identify the task by number.
 
 function runProgram (argument) 
 {
+	let results = [ ];
+
 	switch(argument) {
 	    case 'one':
-	        numberOne()
+	        results = numberOne()
 	        break;
 	    case 'two':
-	        numberTwo()
+	        results = numberTwo()
 	        break;
 	    case 'threeA':
-	        numberThreeA()
+	        results = numberThreeA()
 	        break;
 	    case 'threeB':
-	        numberThreeB()
+	        results = numberThreeB()
 	        break;
 	    case 'fourA':
-	        numberFourA()
+	        results = numberFourA()
 	        break;
 	    case 'fourB':
-	        numberFourB()
+	        results = numberFourB()
 	        break;
 	    default:
 	        numberOne()
@@ -337,12 +357,15 @@ function runProgram (argument)
 	        numberThreeB()
 	        numberFourA()
 	        numberFourB()
+
 	}
+
+	return results
 }
 
 // pass these parameter to get the results - 'all', 'one', 'two', 'threeA', 'threeB', 'fourA', 'fourB'
-
-runProgram('two')
+module.exports = { runProgram };
+// runProgram('fourB')
 // runProgram('fourB')
 
 

@@ -1,4 +1,4 @@
-const { getRandomWordSync, getRandomWord } = require('word-maker');
+import {getRandomWordSync, getRandomWord} from 'word-maker';
 
 console.log('It works!')
 
@@ -9,12 +9,12 @@ function numberOne() {
 
 	let results = [ ]
 
-	for (var i = 1; i < 101; i++) {
+	for (let i = 1; i < 101; i++) {
 		const word = getRandomWordSync({ withErrors: false })
 
 		// console.log(i +': ' + word)
 
-		results.push( i +': ' + word );
+		results.push( `${i}: ${word}` );
 
 	};
 
@@ -37,25 +37,25 @@ function numberOne() {
 function numberTwo() {
 	console.log( 'Number 2')
 
-	for (var i=1; i <= 100; i++)
+	for (let i=1; i <= 100; i++)
 	{
 	    if (i % 15 == 0)
 	    {
-	    	console.log(i +': ' + 'FizzBuzz')
+	    	console.log(`${i}: FizzBuzz`)
 	    }
 	    else if (i % 3 == 0)
 	    {
-			console.log(i +': ' + 'Fizz')
+			console.log(`${i}: Fizz`)
 	    }
 	    else if (i % 5 == 0)
 	    {
-			console.log(i +': ' + 'Buzz')
+			console.log(`${i}: Buzz`)
 	    }
 	    else
 	    {
 	    	const word = getRandomWordSync({ withErrors: false })
 
-			console.log(i +': ' + word)
+			console.log(`${i}: ${word}`)
 	    }
 	}
 
@@ -93,12 +93,12 @@ function numberThreeA() {
 
 	// async without fizz buzz
 
-	for (var i = 1; i < 101; i++) {
+	for (let i = 1; i < 101; i++) {
 		const word = getRandomWord({ withErrors: false })
 
-		word.then(function(argument) {
+		word.then(argument => {
 
-				console.log(i +': ' + argument)
+				console.log(`${i}: ${argument}`)
 
 			})
 	}
@@ -131,33 +131,33 @@ function numberThreeA() {
 
 // 3B. asynchronous step 2
 
-async function numberThreeB() {
+function numberThreeB() {
 
 	console.log( 'Number 3B')
 
 	// async with fizz buzz
 
-	for (var i=1; i <= 100; i++)
+	for (let i=1; i <= 100; i++)
 	{
 	    if (i % 15 == 0)
 	    {
-	    	console.log(i +': ' + 'FizzBuzz')
+	    	console.log(`${i}: FizzBuzz`)
 	    }
 	    else if (i % 3 == 0)
 	    {
-			console.log(i +': ' + 'Fizz')
+			console.log(`${i}: Fizz`)
 	    }
 	    else if (i % 5 == 0)
 	    {
-			console.log(i +': ' + 'Buzz')
+			console.log(`${i}: Buzz`)
 	    }
 	    else
 	    {
 	    	const word = getRandomWord({ withErrors: false })
 
-			await word.then(function(argument) {
-					console.log(i +': ' + argument)
-				}, function(err){
+			word.then(argument => {
+					console.log(`${i}: ${argument}`)
+				}, err => {
 					console.log(err)
 				})
 	    }
@@ -215,18 +215,18 @@ function numberFourA() {
 
 	// synchronous & witherrors true
 	
-	for (var i = 1; i < 101; i++) {
+	for (let i = 1; i < 101; i++) {
 
 		try {
 		   	
 		   	const word = getRandomWordSync({ withErrors: true })
 
-			console.log(i +': ' + word)
+			console.log(`${i}: ${word}`)
 
 		}
 		catch(err) {
 
-			console.log(i +': ' +'Doh!')
+			console.log(`${i}: Doh!`)
 
 		}
 
@@ -265,7 +265,7 @@ function numberFourA() {
 
 // 4B. asynchronous
 
-async function numberFourB() {
+function numberFourB() {
 
 	console.log( 'Number 4B')
 
@@ -273,21 +273,21 @@ async function numberFourB() {
 
 	let results = [ ];
 	
-	for (var i = 1; i < 101; i++) {
+	for (let i = 1; i < 101; i++) {
 
 		const word = getRandomWord({ withErrors: true })
 
-		await word.then(function(argument) {
+		word.then(argument => {
 
 			// console.log(i +': ' + argument)
 
-			results.push( i +': ' + argument );
+			results.push( `${i}: ${argument}` );
 
-		}, function(err){
+		}, err => {
 
 			// console.log(i +': ' + 'Doh!')
 
-			results.push( i +': ' + 'Doh!' );
+			results.push( `${i}: Doh!` );
 
 
 		})
@@ -364,8 +364,7 @@ function runProgram (argument)
 }
 
 // pass these parameter to get the results - 'all', 'one', 'two', 'threeA', 'threeB', 'fourA', 'fourB'
-module.exports = { runProgram };
+export default { runProgram };
 // runProgram('fourB')
 // runProgram('fourB')
-
 

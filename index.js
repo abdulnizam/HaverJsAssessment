@@ -1,22 +1,20 @@
-var lib = require("./src/index")
-
-var fs = require('fs');
+import lib from "./src/index";
+import fs from 'fs';
 
 
 
 // console.log(lib.runProgram('fourB'));
 
 
-var results = lib.runProgram('fourB');
+const results = lib.runProgram('fourB');
 
 let final_r = [ ];
 
-results.then(function(res)
-{
+results.then(res => {
 	
 	// write into file
 
- 	fs.writeFile("/tmp/test", res, function(err) {
+ 	fs.writeFile("/tmp/test", res, err => {
 	    if(err) {
 	        return console.log(err);
 	    }
@@ -27,7 +25,7 @@ results.then(function(res)
 
 // http endpoint
 
-const http = require('http');
+import http from 'http';
 
 const options = {
   hostname: '127.0.0.1',

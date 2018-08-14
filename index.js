@@ -1,19 +1,14 @@
 import lib from "./src/index";
 import fs from 'fs';
 
-
-
 // console.log(lib.runProgram('fourB'));
-
 
 const results = lib.runProgram('fourB');
 
 let final_r = [ ];
 
 results.then(res => {
-	
 	// write into file
-
  	fs.writeFile("/tmp/test", res, err => {
 	    if(err) {
 	        return console.log(err);
@@ -36,7 +31,6 @@ const options = {
 // Make a request
 const req = http.request(options);
 req.end();
-
 req.on('information', (res) => {
   console.log(`Got information prior to main response: ${res.statusCode}`);
 });
